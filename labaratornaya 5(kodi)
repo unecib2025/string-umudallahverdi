@@ -1,0 +1,55 @@
+# Задание 1
+def check_admin(p):
+    if p == "admin123":
+        print("Доступ разрешён")
+    else:
+        print("Доступ запрещён")
+
+# Задание 2
+def check_length(x):
+    if len(x) >= 8:
+        return True
+    else:
+        return False
+
+# Задание 3
+def password_level(y):
+    if check_length(y) and y != "admin123":
+        print("Надёжный пароль")
+    else:
+        print("Пароль ненадёжный")
+
+# Задание 4
+b = 0
+def login(z):
+    global b
+    if z != "admin123":
+        b += 1
+        print("Ошибка входа")
+        if b % 3 == 0:
+            print("Аккаунт временно заблокирован")
+    else:
+        print("Добро пожаловать")
+
+# Задание 5
+def verify_code(c):
+    s = sum(int(i) for i in str(c))
+    if s % 3 == 0:
+        return True
+    else:
+        return False
+
+# Задание 6
+def register_user():
+    def generate_id(n):
+        return len(n) * 10
+    n = input("Введите имя: ")
+    print("ID пользователя:", generate_id(n))
+
+# Задание 7
+def key_check(k):
+    if k == 0:
+        print("Ключ принят")
+    else:
+        print(k)
+        key_check(k - 1)
